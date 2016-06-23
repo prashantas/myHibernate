@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.umapath">
+
+	<class name="Meeting" table="MEETING">
+
+		<id name="meetingId" column="MEETING_ID">
+			<generator class="native" />
+		</id>
+
+		<property name="subject" column="SUBJECT" />
+		<property name="meetingDate" type="date" column="MEETING_DATE" />
+
+		<set name="employees" table="EMPLOYEE_MEETING" >
+			
+			<key column="EMPLOYEE_ID" />
+			<many-to-many column="MEETING_ID" class="Meeting" />
+		</set>
+
+	</class>
+</hibernate-mapping>

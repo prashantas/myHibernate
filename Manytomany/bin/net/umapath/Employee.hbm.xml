@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+        
+
+<hibernate-mapping package="net.umapath">
+
+	<class name="Employee" table="EMP88">
+		<id name="employeeId" column="EMPLOYEE_ID">
+			<generator class="native" />
+		</id>
+
+		<property name="firstname" column="first_name"/>
+		<property name="lastname" column="last_name" />
+
+		<set name="meetings" table="EMPLOYEE_MEETING" 
+			cascade="all">
+			<key column="EMPLOYEE_ID" />
+			<many-to-many column="MEETING_ID" class="Meeting" />
+		</set>
+
+	</class>
+</hibernate-mapping>

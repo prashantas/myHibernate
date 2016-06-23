@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.umapath">
+
+    <class name="Department" table="DEPART_ONE">
+
+ 		<id name="departmentId" type="java.lang.Long" column="DEPARTMENT_ID" >
+			<generator class="native" />
+		</id>
+		
+        <property name="departmentName" column="DEPT_NAME"/>
+
+			
+			
+		<set name="employees" table="emp_many">
+            <key>
+                <column name="department_id" not-null="true" />
+            </key>
+            <one-to-many class="net.umapath.Employee" />
+        </set>
+                
+	
+	 <!--<list name="employees" table="employeelist"
+        inverse="false" cascade="all">
+ 
+            <key column="department_id"  />
+        <list-index column="idx" />
+ 
+            <one-to-many class="net.umapath.Employee" />
+        </list>
+	
+	-->
+	<!--
+	<bag name="employees" table="employeebag"
+                inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="employee_id" not-null="true" />
+            </key>
+            <one-to-many class="net.umapath.Employee" />
+      </bag>
+    
+	
+	
+	-->
+</class>
+</hibernate-mapping>

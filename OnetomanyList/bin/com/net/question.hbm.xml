@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.net.Question" table="QUESTION1_LIST">
+		<id name="qid">
+			<generator class="native"/>
+			
+		</id>
+		
+		<property name="qname"></property>
+		<list name="answers" cascade="all">
+		<key  column = "qid"></key>
+		<index column = "INDEXCOL"></index>
+		<one-to-many class="com.net.Answer"/>
+		</list>
+	</class>
+	
+	<class name="com.net.Answer" table="AnswerM_LIST">
+		<id name="aid">
+			<generator class="native"/>
+			
+		</id>
+		
+		<property name="answername"/>
+		<property name="postedby"/>
+		
+	</class>
+	
+
+</hibernate-mapping>	  

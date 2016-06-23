@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<hibernate_mapping>
+<class name = “info.inetsolv.Address” table = “Address”>
+<composite-id name = “id” class = “info.inetsolv.AddressId”>
+<key-property name “Eno”>
+<column name = “Eno”/>
+</key-property>
+<key-property name = “addno”>
+<column name = “Addno”/>
+</key-property></composite-id>
+<property name = “street”/>
+<property name = “city”/><property name = “state”/>
+</class>
+</hibernate_mapping>

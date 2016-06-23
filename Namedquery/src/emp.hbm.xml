@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="net.umapath.Employee" table="em">
+<id name="id">
+<generator class="native"></generator>
+</id>
+<property name="name"/>
+<property name="job"/>
+<property name="salary"/>
+</class>
+
+<query name="findEmployeeByName">
+<![CDATA[from Employee emp where emp.name = :name]]>
+</query>
+ 
+</hibernate-mapping>
+          

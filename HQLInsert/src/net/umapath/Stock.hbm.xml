@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.umapath">
+<class name="Stock" table="stock1">
+<id name="stockId" type="int" column="stockId" >
+</id>
+<property name="price">
+<column name="price" />
+</property>
+<property name="stockName">
+<column name="stockName" />
+</property>
+</class>
+</hibernate-mapping>

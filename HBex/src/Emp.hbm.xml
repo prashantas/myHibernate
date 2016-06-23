@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="net.umapath.Emp" table="emp9" catalog="umapath">
+        <id name="Id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+               <property name="Name" type="string">
+               
+            <column name="Name" length="10" not-null="true" unique="true" />
+           
+        </property>
+         <property name="address" />
+    </class>
+</hibernate-mapping>
+
